@@ -42,7 +42,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
         Picasso.with(context)
                 .load(items.get(i).getAvatarUrl())
-                .placeholder(R.drawable.load)
+                .placeholder(R.drawable.loading)
                 .into(viewHolder.imageView);
     }
 
@@ -62,7 +62,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             githublink1 = view.findViewById(R.id.githublink1);
             imageView = view.findViewById(R.id.cover);
 
-            //on item click
+            //on click of cardview to display developer homepage
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -75,7 +75,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                         intent.putExtra("avatar_url", items.get(pos).getAvatarUrl());
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         context.startActivity(intent);
-                        Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.getLogin(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(v.getContext(), "Viewing >>> " + clickedDataItem.getLogin(), Toast.LENGTH_SHORT).show();
                     }
                 }
 

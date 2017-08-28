@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Client {
 
+    //using retrofit library to import details via base url
     public static final String BASE_URL = "https://api.github.com";
     public static Retrofit retrofit = null;
 
